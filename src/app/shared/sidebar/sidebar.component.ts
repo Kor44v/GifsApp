@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouteConfigLoadEnd } from '@angular/router';
 import { GifsService } from 'src/app/gifs/services/gifs.service';
 
 
@@ -20,5 +21,9 @@ export class SidebarComponent {
   buscar(term:string){
     this.gifsService.buscarGifs(term)
     console.log(term)
+  }
+  borrar(){
+   localStorage.clear()
+   location.reload()
   }
 }
